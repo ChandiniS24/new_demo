@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>waste heroes</title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css' %}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+      <style>
+          *{
+          margin:0;
+          padding:0;
+          box-sizing:border-box;
+          font-family:sans-serif;
+          }
+        body{
+        min-height:100vh;
+         background-image: url('{% static "images/Recycling-banner (1).jpg" %}');
+         background-size: cover;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        }
+
+          main.table{
+          width:86vw;
+          height:90vh;
+          background-color:#fff5;
+          border-radius:.8rem;
+          backdrop-filter:blur(10px);
+          border-shadow:0 .4rem .8rem #0005;
+          }
+
+         .table_header{
+          width:100%;
+          height:10%;
+          background-color:#fff6;
+          padding:.5rem 2rem;
+          border-radius:.8rem;
+
+}
+          .table_body{
+          width:95%;
+          max-height:calc(90%- .8rem);
+          background-color:#fffb;
+          margin:2rem auto;
+          border-radius:.6rem;
+          overflow:auto;
+}
+
+.table_body::-webkit-scrollbar{
+width:0.5rem;
+height:0.rem;
+}
+
+
+.table_body::webkit-scrollbar-thumb{
+border-radius:.5rem;
+background-color:#0004;
+visibility:hidden;
+
+}
+
+
+
+.table_body:hover::-webkit-scrollbar-thumb{
+visibility:visible;
+}
+           table{
+          width:100%;
+          }
+
+          table,th,td{
+          border-collapse:collapse;
+
+            border: 1px solid #ddd;
+           padding: 8px;
+           text-align: left;
+          }
+
+          thead th{
+          position: sticky;
+          top:0;
+          left:0;
+          background-color:#d5d1defe;
+          }
+
+          tbody tr:nth-child(even){
+          background-color:#0000000b;
+          }
+
+          tbody tr:hover{
+          background-color:#fff6;
+          }
+
+        /* Style for the dropdown menu item */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Style the dropdown toggle link */
+.nav-item .nav-link.dropdown-toggle {
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Change color on hover for the dropdown toggle */
+.nav-item .nav-link.dropdown-toggle:hover {
+    color: #007bff; /* Change to your desired color */
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show the dropdown menu when hovering */
+.nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+/* Style for the dropdown items */
+.dropdown-item {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Change background on hover for dropdown items */
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style for right-aligned dropdown */
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+/* Optional: Add spacing between menu items */
+.dropdown-item + .dropdown-item {
+    margin-top: 5px;
+}
+
+/* Optional: Add a subtle border-radius for smooth edges */
+.dropdown-item {
+    border-radius: 4px;
+}
+          td img{
+          width:100px;
+          height:100px;
+          object-file:cover;
+          border-radius:15px;
+          border:5px solid #ced0d2;
+}
+
+.table_body {
+  max-height: 400px; /* You can adjust the height as needed */
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+<!--  border: 1px solid #ddd; /* Optional: adds border to table cells */-->
+  padding: 8px;
+  text-align: left;
+}
+
+    </style>
+<body>
+    <!-- Navigation -->
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/logoo2.png' %}" alt="logo" style="max-height: 60px; width: 200px;" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="admin">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="U-profile">user profile</a>
+                  </li>    <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     waste&rate
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="Addwaste">add waste</a>
+                        <a class="dropdown-item" href="display_W">manage</a>
+
+                     </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Workers
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="W-profile">employee verify</a>
+                         <a class="dropdown-item" href="approved">approved employee</a>
+
+                        <a class="dropdown-item" href="admin_vieworders">Area allocation to workers</a>
+                     </div>
+                  </li>
+                   <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     more
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="adviewcomplaint">view complaint&reply</a>
+                        <a class="dropdown-item" href="logout">Logout </a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="table">
+              <section class="table_header">
+    <h1>worker</h1>
+              </section>
+                 <section class="table_body">
+<table>
+    <thead>
+  <tr>
+
+    <th>Image</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone no</th>
+     <th>Username</th>
+      <th>view_Details</th>
+      <th>approve</th>
+      <th>reject</th>
+
+
+
+  </tr>
+  </thead>
+  {% for i in data%}
+  <tr>
+
+     <td><img src="{{i.image.url}}" height="100px" width="100px" ></td>
+    <td>{{i.name}}</td>
+            <td>{{i.Email}}</td>
+      <td>{{i.phone_no}}</td>
+      <td>{{i.Username}}</td>
+      <td><a href="bio1/{{i.id}}" class="btn btn-success">view</a></td>
+      <td><a href="approve/{{i.id}}" class="btn btn-success">approve</a><td>
+      <a href="delete/{{i.id}}" class="btn btn-danger">reject</a></td>
+
+
+
+  </tr>
+{% endfor %}
+
+       </table>
+         </section>
+</main>
+</body>
+</html>

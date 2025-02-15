@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - {{ worker.Name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .bio-section {
+            margin-bottom: 20px;
+        }
+        .bio-section h2 {
+            font-size: 24px;
+            color: #333;
+        }
+        .bio-section p {
+            font-size: 16px;
+            color: #555;
+        }
+        .bio-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .bio-section ul li {
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .worker-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .worker-info p {
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Biodata of {{ bio.name }}</h1>
+
+        <!-- Worker Information -->
+        <div class="worker-info">
+            <h2>Worker Information</h2>
+            <p><strong>name:</strong> {{ bio.name }}</p>
+            <p><strong>Email:</strong> {{ bio.Email }}</p>
+        </div>
+
+        <!-- Biodata Details -->
+        <div class="bio-section">
+            <h2>Biodata</h2>
+            {% if bio %}
+                    <p><strong>Gender:</strong> {{ bio.gender }}</p>
+                    <p><strong>DOB:</strong> {{ bio.DOB }}</p>
+                    <p><strong>Address:</strong> {{ bio.address }}</p>
+                    <p><strong>Phone_no:</strong> {{ bio.phone_no }}</p>
+
+     <a href="{{bio.cv.url }}" target="_blank">Open CV</a></td>
+      <img src="{{bio.licenses.url}}" height="100px" width="100px" ></td>
+            {% else %}
+                <p>No biodata available for this worker.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

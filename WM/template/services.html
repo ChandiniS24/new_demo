@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>waste heroes</title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css' %}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        .footer {
+	width:100%;
+background-color: #166d3b;
+background-image: linear-gradient(147deg, #166d3b 0%, #000000 74%);
+	min-height:250px;
+	padding:10px 0px 25px 0px;
+	}/* General styling for .col-lg-6 */
+.col-lg-6 {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    /* Removed margin-bottom: 20px; to prevent separation */
+}
+
+/* Styling for the heading */
+.col-lg-6 h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: green;
+    margin-bottom: 20px;
+}
+
+/* Styling for the paragraph */
+.col-lg-6 p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Styling for the unordered list */
+.col-lg-6 ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+/* Styling for the list items */
+.col-lg-6 ul li {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+/* Custom bullet styling */
+.col-lg-6 ul li:before {
+    content: "•";
+    color: #3498db;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Responsive Design for screens smaller than 768px */
+@media (max-width: 768px) {
+    .col-lg-6 {
+        padding: 20px;  /* Adjust padding for smaller screens */
+    }
+
+    .col-lg-6 h2 {
+        font-size: 1.5rem;  /* Smaller font size for headings */
+    }
+
+    .col-lg-6 p {
+        font-size: 0.95rem;  /* Smaller font size for paragraphs */
+    }
+
+    .col-lg-6 ul li {
+        font-size: 0.95rem;  /* Smaller font size for list items */
+    }
+}
+
+
+
+
+        /* General styling for the portfolio section */
+.portfolio-main {
+    background-color: #f4f4f4; /* Light gray background for the section */
+    padding: 50px 0; /* Adds top and bottom padding */
+}
+
+/* Styling for the portfolio heading */
+.portfolio-main h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: green;
+    margin-bottom: 40px;
+}
+
+
+
+
+/* Styling for the portfolio items container */
+.portfolio-main .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;  /* Adds spacing between columns */
+    justify-content: center;
+}
+
+/* Styling for each portfolio item */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff; /* White background for each item */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow around the cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on portfolio items */
+.portfolio-item:hover {
+    transform: translateY(-10px);  /* Lifts the card slightly */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Styling for the image container */
+.card-img {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-img a {
+    display: block;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Styling for the overlay */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2rem;
+    visibility: hidden;
+}
+
+<!--.portfolio-item:hover .overlay {-->
+<!--    visibility: visible; /* Display the overlay when hovering */-->
+<!--}-->
+
+/* Styling for the card body */
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Styling for the portfolio titles */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: #34495e;
+    transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+    color: #3498db; /* Blue color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .portfolio-main h2 {
+        font-size: 2rem;
+    }
+
+    .portfolio-item {
+        flex: 1 1 calc(50% - 30px); /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-item {
+        flex: 1 1 100%; /* One item per row on small screens */
+    }
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/logoo2.png' %}" alt="logo" style="max-height: 60px; width: 200px;" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="index">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services">Services</a>
+                  </li>
+
+                    <li class="nav-item">
+                     <a class="nav-link" href="login">Login</a>
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+<div class="portfolio-main">
+            <h2>We Treat</h2>
+            <div class="row">
+               <div class="col-lg-4 col-sm-6 portfolio-item">
+                  <div class="">
+                     <div class="card-img">
+                        <a href="#">
+                           <img class="card-img-top" src="{% static 'images/plastic-bottles.jpg' %}" alt="" />
+                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <h4 class="card-title">
+                           <a >Plastic Bottles</a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6 portfolio-item">
+                  <div class="">
+                     <div class="card-img">
+                        <a href="#">
+                           <img class="card-img-top" src="{% static 'images/Recycle2.jpg' %}" alt="" />
+                           <div class="overlay"><i class=""></i></div>
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <h4 class="card-title">
+                           <a >papers & cardboard</a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6 portfolio-item">
+                  <div class="">
+                     <div class="card-img">
+                        <a >
+                           <img class="card-img-top" src="{% static 'images/glass_bottles13.jpg' %}" alt="" />
+                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <h4 class="card-title">
+                           <a >Glass bottles</a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6 portfolio-item">
+                  <div class="">
+                     <div class="card-img">
+                        <a href="#">
+                           <img class="card-img-top" src="{% static 'images/mettalic.jpg' %}" alt="" />
+                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <h4 class="card-title">
+                           <a>Metallic Wastes</a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6 portfolio-item">
+                  <div class="">
+                     <div class="card-img">
+                        <a href="#">
+                           <img class="card-img-top" src="{% static 'images/iStock-1057790090 (1).jpg' %}" alt="" />
+                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <h4 class="card-title">
+                           <a >Food & Organic wastes</a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6 portfolio-item">
+                  <div class="">
+                     <div class="card-img">
+                        <a href="#">
+                           <img class="card-img-top" src="{% static 'images/can1.jpg '%}" alt="" />
+                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+                        </a>
+                     </div>
+                     <div class="card-body">
+                        <h4 class="card-title">
+                           <a >Food & beverage cans </a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <hr>
+
+    <!-- /.container -->
+    <!--footer starts from here-->
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">waste heroes</h5>
+					<!--headin5_amrc-->
+					<p class="mb10">WE are here to make your life and environment much more cleaner and safe</p>
+<!--					<p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>-->
+<!--					<p><i class="fa fa-phone"></i> +91-9999878398 </p>-->
+<!--					<p><i class="fa fa fa-envelope"></i> info@example.com </p>-->
+               </div>
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">       write us   <i class="fa fa fa-envelope"></i>  </h5>
+					<!--headin5_amrc ends here-->
+					<ul class="footer_ul2_amrc">
+						<li>
+<!--							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>-->
+							<p><i class="fa fa fa-envelope"></i>   wasteheroes29@gamil.com</p>
+						</li>
+						<li>
+<!--							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>-->
+						<p><i class="fa fa fa-envelope"></i>  info@example.com</p>
+						</li>
+
+					</ul>
+					<!--footer_ul2_amrc ends here-->
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<h5 class="headin5_amrc col_white_amrc pt2">  <i class="fa fa-phone"></i>  call us </h5>
+					<!--headin5_amrc-->
+					<ul class="footer_ul_amrc">
+                        <li>
+                        <p><i class="fa fa-phone"></i> +91-9999878398 </p>
+                            <p><i class="fa fa-phone"></i> +91-9904533214 </p>
+
+                        </li>
+
+					</ul>
+					<!--footer_ul_amrc ends here-->
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 ">
+					<h5 class="headin5_amrc col_white_amrc pt2"><i class="fa fa-location-arrow"></i>   visit us </h5>
+					<!--headin5_amrc-->
+					<ul class="footer_ul_amrc">
+						<li class="media">
+							<div class="media-left">
+<!--								<img class="img-fluid" src="{% static 'images/post-img-01.jpg' %}" alt="" />-->
+							</div>
+							<div class="media-body">
+								<p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+							</div>
+						</li>
+						<li class="media">
+<!--							<div class="media-left">-->
+<!--								<img class="img-fluid" src="{% static 'images/post-img-02.jpg' %}" alt="" />-->
+<!--							</div>-->
+<!--							<div class="media-body">-->
+<!--								<p>How to find best dog food?</p>-->
+<!--								<span>34 Sep 2018</span>-->
+<!--							</div>-->
+						</li>
+						<li class="media">
+<!--							<div class="media-left">-->
+<!--								<img class="img-fluid" src="{% static 'images/post-img-03.jpg' %}" alt="" />-->
+<!--							</div>-->
+<!--							<div class="media-body">-->
+<!--								<p>How to find best dog food?</p>-->
+<!--								<span>30 Sep 2018</span>-->
+<!--							</div>-->
+						</li>
+					</ul>
+					<!--footer_ul_amrc ends here-->
+				</div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="footer-logo">
+				<a href="#"><img src="{% static 'images/logoo2.png' %}" alt="" /></a>
+			</div>
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="copyright text-center">All Rights Reserved. &copy; 2024 <a href="#"></a> Design By :
+				<a href="https://html.design/">html design</a>
+            </p>
+            <ul class="social_footer_ul">
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+    </footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

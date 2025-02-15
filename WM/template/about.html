@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>waste heroes</title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css' %}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<style>
+
+
+.full-title{
+	padding: 80px 0px;
+	background: url('{% static "images/ac.jpg" %}') ;
+	position: relative;
+}
+.full-title:before{
+	content: "";
+	background: rgba(0,0,0,0.5);
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.full-title h1{
+	position: relative;
+	color: #ffffff;
+}
+.full-title h1 small{
+	float: right;
+	padding: 15px 0px;
+	font-size: 14px;
+}
+		    .footer {
+	width:100%;
+background-color: #166d3b;
+background-image: linear-gradient(147deg, #166d3b 0%, #000000 74%);
+	min-height:250px;
+	padding:10px 0px 25px 0px;
+	</style>
+</head>
+<body>
+    <!-- Navigation -->
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/logoo2.png' %}" alt="logo" style="max-height: 60px; width: 200px;" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="index">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services">Services</a>
+                  </li>
+
+                    <li class="nav-item">
+                     <a class="nav-link" href="login">Login</a>
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+	<!-- full Title -->
+	<div class="full-title">
+		<div class="container">
+			<!-- Page Heading/Breadcrumbs -->
+			<h1 class="mt-4 mb-3">About
+				<small>Subheading</small>
+			</h1>
+		</div>
+	</div>
+    <!-- Page Content -->
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item active">About</li>
+			</ol>
+		</div>
+		<!-- About Content -->
+		<div class="about-main">
+			<div class="row">
+				<div class="col-lg-6">
+					<img class="img-fluid rounded mb-4" src="{% static 'images/waste aduit.png' %}" alt="" />
+				</div>
+				<div class="col-lg-6">
+					<h2>About Waste Management System</h2>
+
+                     <p>Waste management, specifically waste pickup, is a critical service that keeps our communities clean and livable. The process involves the regular collection of garbage from residential, commercial, and industrial spaces to ensure that waste is disposed of properly. Efficient waste pickup reduces the risk of pollution, prevents the spread of disease, and minimizes the environmental impact of waste accumulation.</p>
+					<p>In urban areas, timely and organized waste pickup helps maintain a high standard of living by avoiding overflowing trash bins, unsightly waste piles, and unpleasant odors. By keeping waste in check, pickup services play a vital role in enhancing public health, supporting local businesses, and promoting a positive community image.</p>
+					<p>Moreover, regular waste pickup services are important in managing both everyday waste and larger, bulkier items, which can otherwise pose safety hazards if left unattended. This practice also supports sustainability by enabling better waste segregation and eventual proper disposal or recycling, if applicable. Effective waste management and collection provide a foundation for long-term environmental stewardship, ensuring that cities are clean, organized, and resilient to the challenges of waste production.</p>
+				</div>
+			</div>
+			<!-- /.row -->
+		</div>
+
+		<!-- Team Members -->
+<!--		<div class="team-members-box">  -->
+<!--			<h2>Our Team</h2>-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-4 mb-4">-->
+<!--				  <div class="card h-100 text-center">-->
+<!--					<img class="card-img-top" src="{% static 'images/team_01.jpg' %}" alt="" />-->
+<!--					<div class="card-body">-->
+<!--						<h4 class="card-title">Team Member</h4>-->
+<!--						<h6 class="card-subtitle mb-2 text-muted">Position</h6>-->
+<!--						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>-->
+<!--					</div>-->
+<!--					<div class="card-footer">-->
+<!--						<ul>-->
+<!--							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>-->
+<!--							<li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
+<!--							<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				  </div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-4 mb-4">-->
+<!--				  <div class="card h-100 text-center">-->
+<!--					<img class="card-img-top" src="{% static 'images/team_02.jpg' %}" alt="" />-->
+<!--					<div class="card-body">-->
+<!--						<h4 class="card-title">Team Member</h4>-->
+<!--						<h6 class="card-subtitle mb-2 text-muted">Position</h6>-->
+<!--						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>-->
+<!--					</div>-->
+<!--					<div class="card-footer">-->
+<!--						<ul>-->
+<!--							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>-->
+<!--							<li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
+<!--							<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				  </div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-4 mb-4">-->
+<!--				  <div class="card h-100 text-center">-->
+<!--					<img class="card-img-top" src="{% static 'images/team_03.jpg '%}" alt="" />-->
+<!--					<div class="card-body">-->
+<!--						<h4 class="card-title">Team Member</h4>-->
+<!--						<h6 class="card-subtitle mb-2 text-muted">Position</h6>-->
+<!--						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>-->
+<!--					</div>-->
+<!--					<div class="card-footer">-->
+<!--						<ul>-->
+<!--							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>-->
+<!--							<li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
+<!--							<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				  </div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			&lt;!&ndash; /.row &ndash;&gt;-->
+<!--		</div>-->
+<!--		&lt;!&ndash; Our Customers &ndash;&gt;-->
+<!--		<div class="customers-box"> -->
+<!--			<h2>Our Customers</h2>-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-2 col-sm-4 mb-4">-->
+<!--				  <img class="img-fluid" src="{% static 'images/logo_01.png' %}" alt="" />-->
+<!--				</div>-->
+<!--				<div class="col-lg-2 col-sm-4 mb-4">-->
+<!--				  <img class="img-fluid" src="{% static 'images/logo_02.png' %}" alt="" />-->
+<!--				</div>-->
+<!--				<div class="col-lg-2 col-sm-4 mb-4">-->
+<!--				  <img class="img-fluid" src="{% static 'images/logo_03.png' %}" alt="" />-->
+<!--				</div>-->
+<!--				<div class="col-lg-2 col-sm-4 mb-4">-->
+<!--				  <img class="img-fluid" src="{% static 'images/logo_04.png' %}" alt="" />-->
+<!--				</div>-->
+<!--				<div class="col-lg-2 col-sm-4 mb-4">-->
+<!--				  <img class="img-fluid" src="{% static 'images/logo_05.png' %}" alt="" />-->
+<!--				</div>-->
+<!--				<div class="col-lg-2 col-sm-4 mb-4">-->
+<!--				  <img class="img-fluid" src="{% static 'images/logo_06.png' %}" alt="" />-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			&lt;!&ndash; /.row &ndash;&gt;-->
+<!--		</div>-->
+<!--		&lt;!&ndash; /.container &ndash;&gt;-->
+<!--	</div>-->
+
+    <!--footer starts from here-->
+<footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">waste heroes</h5>
+					<!--headin5_amrc-->
+					<p class="mb10">WE are here to make your life and environment much more cleaner and safe</p>
+<!--					<p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>-->
+<!--					<p><i class="fa fa-phone"></i> +91-9999878398 </p>-->
+<!--					<p><i class="fa fa fa-envelope"></i> info@example.com </p>-->
+               </div>
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">       write us   <i class="fa fa fa-envelope"></i>  </h5>
+					<!--headin5_amrc ends here-->
+					<ul class="footer_ul2_amrc">
+						<li>
+<!--							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>-->
+							<p><i class="fa fa fa-envelope"></i>   wasteheroes29@gamil.com</p>
+						</li>
+						<li>
+<!--							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>-->
+						<p><i class="fa fa fa-envelope"></i>  info@example.com</p>
+						</li>
+
+					</ul>
+					<!--footer_ul2_amrc ends here-->
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<h5 class="headin5_amrc col_white_amrc pt2">  <i class="fa fa-phone"></i>  call us </h5>
+					<!--headin5_amrc-->
+					<ul class="footer_ul_amrc">
+                        <li>
+                        <p><i class="fa fa-phone"></i> +91-9999878398 </p>
+                            <p><i class="fa fa-phone"></i> +91-9904533214 </p>
+
+                        </li>
+
+					</ul>
+					<!--footer_ul_amrc ends here-->
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 ">
+					<h5 class="headin5_amrc col_white_amrc pt2"><i class="fa fa-location-arrow"></i>   visit us </h5>
+					<!--headin5_amrc-->
+					<ul class="footer_ul_amrc">
+						<li class="media">
+							<div class="media-left">
+<!--								<img class="img-fluid" src="{% static 'images/post-img-01.jpg' %}" alt="" />-->
+							</div>
+							<div class="media-body">
+								<p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+							</div>
+						</li>
+						<li class="media">
+<!--							<div class="media-left">-->
+<!--								<img class="img-fluid" src="{% static 'images/post-img-02.jpg' %}" alt="" />-->
+<!--							</div>-->
+<!--							<div class="media-body">-->
+<!--								<p>How to find best dog food?</p>-->
+<!--								<span>34 Sep 2018</span>-->
+<!--							</div>-->
+						</li>
+						<li class="media">
+<!--							<div class="media-left">-->
+<!--								<img class="img-fluid" src="{% static 'images/post-img-03.jpg' %}" alt="" />-->
+<!--							</div>-->
+<!--							<div class="media-body">-->
+<!--								<p>How to find best dog food?</p>-->
+<!--								<span>30 Sep 2018</span>-->
+<!--							</div>-->
+						</li>
+					</ul>
+					<!--footer_ul_amrc ends here-->
+				</div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="footer-logo">
+				<a href="#"><img src="{% static 'images/logoo2.png' %}" alt="" /></a>
+			</div>
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="copyright text-center">All Rights Reserved. &copy; 2024 <a href="#"></a> Design By :
+				<a href="https://html.design/">html design</a>
+            </p>
+            <ul class="social_footer_ul">
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+    </footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+	</div>
+</body>
+</html>

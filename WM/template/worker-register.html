@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>waste heroes </title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css' %}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <style>
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('{% static "images/ad.jpg" %}');/* Add the path to your background image */
+    background-size: cover; /* Make sure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+    height: 100vh; /* Ensure the body takes up the full height of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg {
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent background for the form */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    height:600px;
+
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: -20px;
+}
+
+.content {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-bottom: .05px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+input[type="file"],
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #4CAF50;
+    background-color: #e6ffe6;
+}
+
+input[type="file"] {
+    border: none;
+    padding: 0;
+}
+
+.gender-details {
+    margin-top: 20px;
+}
+
+.gender-title {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.category {
+    display: flex;
+    gap: 15px;
+}
+
+select {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+input[type="submit"] {
+background: linear-gradient(135deg, #000000,#166D3B);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .user-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    </style>
+</head><body>
+    <!-- Navigation -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+<!--        <div class="container">-->
+            <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/logo.png' %}" alt="logo" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="user">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services">Services</a>
+                  </li>
+                    <li class="nav-item">
+                     <a class="nav-link" href="login">Login</a>
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="reg">
+        <div class="title">Registration</div>
+          <div class="content">
+<form action="worker-r" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                       <div class="user-details">
+          <!-- Input for Full Name -->
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="n1" placeholder="Enter your name" required>
+          </div>
+          <!-- Input for Username -->
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="n2" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">DOB</span>
+            <input type="date" name="n3" placeholder="Date Of Birth" required>
+          </div>
+             <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" name="n4" placeholder="Address" required>
+          </div>
+          <!-- Input for Email -->
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="n5" placeholder="Enter your email" required>
+          </div>
+          <!-- Input for Phone Number -->
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="tel" name="n6" placeholder="Enter your number"  required>
+          </div>
+           <div class="input-box">
+            <span class="details">Image</span>
+            <input type="file" name="n7" placeholder="image" required>
+          </div>
+
+           <div class="input-box">
+            <span class="details">Cv_file</span>
+            <input type="file" name="n8" placeholder="cv_file" required>
+          </div>
+
+           <div class="input-box">
+            <span class="details">licenses</span>
+            <input type="file" name="n9" placeholder="licenses" required>
+          </div>
+          <!-- Input for Password -->
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="n10" placeholder="Enter your password" required>
+          </div>
+          <!-- Input for Confirm Password -->
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="n11" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <!-- Radio buttons for gender selection -->
+
+          <span class="gender-title">Gender</span>
+          <div class="category">
+             <label for="gender"></label>
+            <select id="gender" name="gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="prefer not to say">prefer not to say</option>
+            </select>
+        </div>
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" value="Submit">
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- <footer>-->
+<!--    <div class="container_24">-->
+<!--      <div class="wrapper">-->
+<!--        <div class="grid_24 footer-bg">-->
+<!--          <div class="hr-border-2"></div>-->
+<!--          <div class="wrapper">-->
+<!--            <div class="grid_7 suffix_1 prefix_1 alpha">-->
+<!--              <div class="copyright"> &copy; 2012 <strong class="footer-logo">AgroPlus</strong>-->
+<!--                <div>Website Template by <a target="_blank" href="http://www.templatemonster.com/">Templatemonster.com</a></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="grid_4">-->
+<!--              <h5 class="heading-1">Archives:</h5>-->
+<!--              <ul class="footer-list">-->
+<!--                <li><a href="#">October 2012</a></li>-->
+<!--                <li><a href="#">September 2012</a></li>-->
+<!--                <li><a href="#">August 2012</a></li>-->
+<!--                <li><a href="#">July 2012</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="grid_4">-->
+<!--              <h5 class="heading-1">Links:</h5>-->
+<!--              <ul class="footer-list">-->
+<!--                <li><a href="#">Documentation</a></li>-->
+<!--                <li><a href="#">Plugins</a></li>-->
+<!--                <li><a href="#">Suggest Ideas</a></li>-->
+<!--                <li><a href="#">Support Forum</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="grid_4">-->
+<!--              <h5 class="heading-1">Support:</h5>-->
+<!--              <ul class="footer-list">-->
+<!--                <li><a href="#">Special Proposition</a></li>-->
+<!--                <li><a href="#">Free Phone</a></li>-->
+<!--                <li><a href="#">Solutions</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="grid_2 suffix_1 omega">-->
+<!--              <ul class="social-list">-->
+<!--                <li><a href="#"><img src="{% static 'images/social-icon-1.png' %}" alt=""></a></li>-->
+<!--                <li><a href="#"><img src="{% static 'images/social-icon-2.png' %}" alt=""></a></li>-->
+<!--                <li><a href="#"><img src="{% static 'images/social-icon-3.png' %}" alt=""></a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </footer>-->
+
+</body>
+</html>
